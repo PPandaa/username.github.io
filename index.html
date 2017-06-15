@@ -91,7 +91,31 @@
 
 				</div>
 			</footer>
+		<!--「日期特效-文字時鐘」程式碼的開始 --> 
 
+			<script language="JavaScript"> 
+		<!--  
+				document.write('<div align="left bottom"><position="relative"><font size="2">'); 
+				document.write("<span id='clock'></span>"); 
+				var now,hours,minutes,seconds,timeValue; 
+				function showtime(){ 
+					now = new Date(); 
+					hours = now.getHours(); 
+					minutes = now.getMinutes(); 
+					seconds = now.getSeconds(); 
+					timeValue = (hours >= 12) ? "下午 " : "上午 "; 
+					timeValue += ((hours > 12) ? hours - 12 : hours) + " 點"; 
+					timeValue += ((minutes < 10) ? " 0" : " ") + minutes + " 分"; 
+					timeValue += ((seconds < 10) ? " 0" : " ") + seconds + " 秒"; 
+					clock.innerHTML = timeValue; 
+					setTimeout("showtime()",100); 
+				} 
+				showtime(); 
+				document.write('</font></div>');
+		//--> 
+			</script>
+
+		<!--「日期特效-文字時鐘」程式碼的結束 --> 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
